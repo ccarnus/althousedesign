@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { heroImage } from "@/lib/images";
-import EmailSignup from "./EmailSignup";
 
 export default function Hero() {
   return (
@@ -41,9 +40,6 @@ export default function Hero() {
           <div className="w-1 h-1 rounded-full bg-brand-terracotta" />
           <div className="h-px w-12 bg-brand-sand/40" />
         </div>
-
-        {/* Email signup */}
-        <EmailSignup />
       </div>
     </section>
   );
