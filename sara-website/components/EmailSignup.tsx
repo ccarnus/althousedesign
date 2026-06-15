@@ -10,12 +10,16 @@ export default function EmailSignup() {
     e.preventDefault();
     setStatus("loading");
     try {
-      await fetch("/api/notify", {
+      const response = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
-      setStatus("done");
+      if (response.ok) {
+        setStatus("done");
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
